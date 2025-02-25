@@ -15,5 +15,12 @@ export default function QueryProcessor(query: string): string {
 	return "mythut";
   }
 
+  if (query.toLowerCase().includes("plus")) {
+	let firstNum = parseInt(query.substring(8,10));
+	let secondNum = parseInt(query.substring(16,18));
+	let sum = firstNum + secondNum;
+    return sum.toString();
+  }
+
   return "";
 }
