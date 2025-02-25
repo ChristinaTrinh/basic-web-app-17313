@@ -41,5 +41,12 @@ export default function QueryProcessor(query: string): string {
 	}
   }
 
+  if (query.toLowerCase().includes("multiplied")) {
+	let firstNum = parseInt(query.substring(8,10));
+	let secondNum = parseInt(query.substring(25,27));
+	let mult = firstNum * secondNum;
+	return mult.toString();
+  }
+
   return "";
 }

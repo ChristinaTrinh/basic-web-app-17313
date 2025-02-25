@@ -31,4 +31,10 @@ describe("QueryProcessor", () => {
 		const response: string = QueryProcessor(query);
 		expect(response).toBe(("mythut"));
 	});
+
+	test('should return multiply', () => {
+		const query = "What is 24 multiplied by 21?";
+		const response: string = QueryProcessor(query);
+		expect(response).toBe(("504"));
+	});
 });
