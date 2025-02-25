@@ -58,9 +58,15 @@ export default function QueryProcessor(query: string): string {
 	}
   }
 
-//   if (query.toLowerCase().includes("minus")) {
-// 	let firstNum
-//   }
+  if (query.toLowerCase().includes("minus")) {
+	const match = query.match(/(\d+)\s*minus\s*(\d+)/);
+	if (match) {
+		const firstNum = parseInt(match[1], 10);
+		const secondNum = parseInt(match[2], 10);
+		let sub = firstNum - secondNum;
+		return sub.toString();
+	}
+  }
 
   return "";
 }
