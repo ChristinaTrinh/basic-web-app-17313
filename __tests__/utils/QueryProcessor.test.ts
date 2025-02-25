@@ -37,4 +37,10 @@ describe("QueryProcessor", () => {
 		const response: string = QueryProcessor(query);
 		expect(response).toBe(("504"));
 	});
+
+	test('should return square and cube', () => {
+		const query = "Which of the following numbers is both a square and a cube: 4857, 4096, 1331, 1884, 1988, 2060, 1024?";
+		const response: string = QueryProcessor(query);
+		expect(response).toBe(("4096"));
+	});
 });

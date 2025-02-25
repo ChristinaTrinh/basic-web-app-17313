@@ -48,5 +48,25 @@ export default function QueryProcessor(query: string): string {
 	return mult.toString();
   }
 
+  if (query.toLowerCase().includes("both a square and a cube")) {
+	const matches = query.match(/\d+/g);
+	let numbers = [];
+	if (matches) {
+		numbers = matches.map(num => parseInt(num,10));
+		let value = numbers.filter(find);
+		return value[0].toString();
+	}
+  }
+
+//   if (query.toLowerCase().includes("minus")) {
+// 	let firstNum
+//   }
+
   return "";
+}
+
+function find(value: number, index: any, array: any) {
+	let sqrt = Math.sqrt(value);
+	let cb = Math.cbrt(value);
+	return Number.isInteger(sqrt) && Number.isInteger(cb);
 }
