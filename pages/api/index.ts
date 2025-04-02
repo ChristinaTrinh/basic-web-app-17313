@@ -1,17 +1,17 @@
-// Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from "next";
+import QueryProcessor from "../../utils/QueryProcessor.js";
 
-type Data = string;
+type Data = { result?: string; error?: string };
 
-import QueryProcessor from "../../utils/QueryProcessor";
-export default function handler(
+export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<Data>
 ) {
-  console.log(req.url);
-  
   const query = req.query.q as string;
-  const response = QueryProcessor(query);
-
-  res.status(200).send(response);
+  try {
+    const result = await QueryProcessor(query);
+    res.status(200).json({ result });
+  } catch (error) {
+    console.error("Error in QueryProcessor:", error);
+  }
 }
