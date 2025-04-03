@@ -17,7 +17,6 @@ async function callLLM(question) {
 		model: "gpt-4o",
 		input: prompt
 	});
-	console.log(response.output_text);
 	return response.output_text;
 }
 
