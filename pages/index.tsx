@@ -20,8 +20,8 @@ export default function Home() {
     <div>
       <h1>Welcome!!</h1>
       <p>Please enter any question or content in the box below. </p>
-	  <p>If it is a piece of information, the start of you input should be "This is information level-your information"</p>
-	  <p>If it is a question, the start of you input should be "This is question level-your question"</p>
+	  <p>If it is a piece of information, the start of you input should be &quot;This is information level-your information&quot;</p>
+	  <p>If it is a question, the start of you input should be &quot;This is question level-your question&quot;</p>
 	  <textarea
 	    value={query}
 	    onChange={(e) => setQuery(e.target.value)}
